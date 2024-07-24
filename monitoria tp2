@@ -1,0 +1,25 @@
+javascript
+function validarFormulario() {
+    // Verifica se todos os campos estão preenchidos
+    let campos = document.querySelectorAll('input');
+    let formularioPreenchido = true;
+    
+    campos.forEach(campo => {
+        if (campo.value.trim() === '') {
+            formularioPreenchido = false;
+        }
+    });
+
+    // Verifica se o divisor é diferente de zero
+    let divisor = parseFloat(document.getElementById('divisor').value);
+    if (divisor === 0) {
+        formularioPreenchido = false;
+    }
+
+    if (!formularioPreenchido) {
+        alert('Por favor, preencha todos os campos e verifique o divisor!');
+        return false; // Impede o envio do formulário
+    }
+
+    return true; // Permite o envio do formulário
+}
