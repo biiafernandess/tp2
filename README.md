@@ -1,0 +1,26 @@
+views/conta.ejs
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+  <script>
+    function setAction(action) {
+      document.getElementById('calcForm').action = action;
+    }
+  </script>
+</head>
+<body>
+  <h1>Calculadora</h1>
+
+  <form id="calcForm" method="POST">
+    <input type="number" name="num1" placeholder="Número 1" required>
+    <input type="number" name="num2" placeholder="Número 2" required>
+    <button type="submit" onclick="setAction('/soma')">Somar</button>
+    <button type="submit" onclick="setAction('/subtracao')">Subtrair</button>
+    <button type="submit" onclick="setAction('/multiplicacao')">Multiplicar</button>
+    <button type="submit" onclick="setAction('/divisao')">Dividir</button>
+  </form>
+
+</body>
+</html>
